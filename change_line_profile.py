@@ -44,8 +44,7 @@ try:
     config = dict(config_parser.items('fusion'))
     user, password, number = config['user'], config['password'], config['number']
 except (ConfigParser.NoSectionError, KeyError):
-    sys.stderr.write('Error reading config file!\n')
-    sys.exit(1)
+    sys.exit('Error reading config file!')
 
 s = requests.Session()
 print 'Authenticating...',
